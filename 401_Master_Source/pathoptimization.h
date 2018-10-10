@@ -7,12 +7,12 @@
 #include "ME401_Radio.h"
 
 
-void DistanceTo(RobotPose us, BallPosition target);
-void AngleTo(RobotPose us, BallPosition target);
+void distanceTo(RobotPose us, BallPosition target);
+void angleTo(RobotPose us, BallPosition target);
 double dotProd(int x1, int y1, int x2, int y2);
 
 
-void DistanceTo(RobotPose us, BallPosition arr[])
+void distanceTo(RobotPose us, BallPosition arr[])
 {
   for(int i = 0; i < NUM_BALLS ; i++)
   {
@@ -22,11 +22,11 @@ void DistanceTo(RobotPose us, BallPosition arr[])
   }  
 }
 
-void AngleTo(RobotPose us, BallPosition arr[])
+void angleTo(RobotPose us, BallPosition arr[])
 {
 
-  double usX = tan(us.theta);
-  double usY = 1;
+  int usX = tan(us.theta);
+  int usY = 1;
   double usMag = sqrt(usX^2+1);
   for(int i = 0; i < NUM_BALLS ; i++)
   {
@@ -35,7 +35,7 @@ void AngleTo(RobotPose us, BallPosition arr[])
   double unitY = arr[i].y/arr[i].distanceTo;
 
     
-  arr[i].angleTo = acos(dotProd(usX,usY,unitX,unitY)/(arr[i].distanceTo * usMag);
+  arr[i].angleTo = acos(dotProd(usX,usY,unitX,unitY)/(arr[i].distanceTo * usMag));
   }
 }
 
