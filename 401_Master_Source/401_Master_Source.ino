@@ -62,6 +62,12 @@ void loop() {
   }
 
   BallPosition ballPos[20];
+
+
+  distanceTo(robot[0], ballPos);  //determines the distance from us to all of the balls
+    BallPosition ballPosSorted[20]=ballPos;
+  qsort(ballPos,NUM_BALLS,sizeof(BallPosition),comparator());
+  
   int numBalls = getBallPositions(ballPos);
   Serial.print("NUM BALLS: ");
   Serial.println(numBalls);

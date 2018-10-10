@@ -24,13 +24,18 @@ void DistanceTo(RobotPose us, BallPosition arr[])
 
 void AngleTo(RobotPose us, BallPosition arr[])
 {
+
+  double usX = tan(us.theta);
+  double usY = 1;
+  double usMag = sqrt(usX^2+1);
   for(int i = 0; i < NUM_BALLS ; i++)
   {
     //unit vectors towards the ball
   double unitX = arr[i].x/arr[i].distanceTo;
   double unitY = arr[i].y/arr[i].distanceTo;
-  
-  arr[i].angleTo = acos(dotProd(us.x, us.y,unitX,unitY));
+
+    
+  arr[i].angleTo = acos(dotProd(usX,usY,unitX,unitY)/(arr[i].distanceTo * usMag);
   }
 }
 
