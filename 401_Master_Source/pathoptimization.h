@@ -53,6 +53,11 @@ int comparator(double* a, double* b)
     temp = 1;
 
   return temp;
+}
+
+void sort(BallPosition arr[])
+{
+
   
 }
 
