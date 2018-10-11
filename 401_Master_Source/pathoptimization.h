@@ -26,6 +26,7 @@ void AngleTo(RobotPose us, BallPosition arr[])
 {
   for(int i = 0; i < NUM_BALLS ; i++)
   {
+    //unit vectors towards the ball
   double unitX = arr[i].x/arr[i].distanceTo;
   double unitY = arr[i].y/arr[i].distanceTo;
   
@@ -35,7 +36,19 @@ void AngleTo(RobotPose us, BallPosition arr[])
 
 double dotProd(int x1, int y1, int x2, int y2)
 {
-  return (x1*x2)+(y1*y2)o;
+  return (x1*x2)+(y1*y2);
+}
+
+int comparator(double* a, double* b)
+{
+  int temp = 0;
+  if(*a<*b)
+    temp = -1;
+  else if(*a>*b)
+    temp = 1;
+
+  return temp;
+  
 }
 
 
