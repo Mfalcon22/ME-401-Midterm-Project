@@ -1,8 +1,9 @@
 #include "ME401_Radio.h"
 #include "ME401_PID_IR.h"
 #include "pathoptimization.h"
+#include "RobotsOnTheField.h"
 
-#define MY_ROBOT_ID 1
+
 
 void setup() {
 
@@ -62,9 +63,11 @@ void loop() {
   }
 
   BallPosition ballPos[20];
-  
 
-  distanceTo(robot, ballPos);  //determines the distance from us to all of the balls
+
+
+  distanceTo(robotPoses[0], ballPos);  //determines the distance from us to all of the balls
+  angleTo(robot, ballPos);    //determines the angle from us to the ball clockwise
   qsort((void*)ballPos,NUM_BALLS,sizeof(BallPosition),comparator);
   
   int numBalls = getBallPositions(ballPos);

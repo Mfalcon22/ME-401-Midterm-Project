@@ -10,6 +10,7 @@
 void distanceTo(RobotPose us, BallPosition target);
 void angleTo(RobotPose us, BallPosition target);
 double dotProd(int x1, int y1, int x2, int y2);
+int comparator(const void *a, const void *b);
 
 
 void distanceTo(RobotPose us, BallPosition arr[])
@@ -51,11 +52,9 @@ int comparator(const void *a, const void *b)
   return (l - r);
 }
 
-void sort(BallPosition arr[])
-{
 
-  
-}
+
+
 
 
 
