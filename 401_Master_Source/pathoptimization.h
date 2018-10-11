@@ -7,10 +7,11 @@
 #include "ME401_Radio.h"
 
 
-void distanceTo(RobotPose us, BallPosition target);
-void angleTo(RobotPose us, BallPosition target);
+void distanceTo(RobotPose us, BallPosition arr[]);
+void angleTo(RobotPose us, BallPosition arr[]);
 double dotProd(int x1, int y1, int x2, int y2);
 int comparator(const void *a, const void *b);
+
 
 
 void distanceTo(RobotPose us, BallPosition arr[])
@@ -51,6 +52,8 @@ int comparator(const void *a, const void *b)
   int r = ((BallPosition *)b)->distanceTo;
   return (l - r);
 }
+
+
 
 
 

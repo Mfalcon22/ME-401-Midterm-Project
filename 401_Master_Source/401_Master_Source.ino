@@ -64,11 +64,11 @@ void loop() {
 
   BallPosition ballPos[20];
 
-
+  toTheFront(robotPoses);                //Sorts our bot to the front of the list
 
   distanceTo(robotPoses[0], ballPos);  //determines the distance from us to all of the balls
-  angleTo(robot, ballPos);    //determines the angle from us to the ball clockwise
-  qsort((void*)ballPos,NUM_BALLS,sizeof(BallPosition),comparator);
+  angleTo(robot, ballPos);              //determines the angle from us to the ball clockwise
+  qsort((void*)ballPos,NUM_BALLS,sizeof(BallPosition),comparator);    //
   
   int numBalls = getBallPositions(ballPos);
   Serial.print("NUM BALLS: ");
