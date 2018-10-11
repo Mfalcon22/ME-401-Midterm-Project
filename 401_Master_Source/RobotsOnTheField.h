@@ -35,7 +35,7 @@ int masterSort(BallPosition arr[], int counter)
     return 0;
   else {
     counter++;
-    qsort((void*)arr[counter], NUM_BALLS, sizeof(BallPosition), comparator);
+    qsort((void*)arr, NUM_BALLS, sizeof(BallPosition), comparator);
     masterSort(arr++, counter);
   }
 
