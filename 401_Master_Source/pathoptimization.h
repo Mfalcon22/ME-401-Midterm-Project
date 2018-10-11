@@ -44,15 +44,11 @@ double dotProd(int x1, int y1, int x2, int y2)
   return (x1*x2)+(y1*y2);
 }
 
-int comparator(double* a, double* b)
+int comparator(const void *a, const void *b)
 {
-  int temp = 0;
-  if(*a<*b)
-    temp = -1;
-  else if(*a>*b)
-    temp = 1;
-
-  return temp;
+  int l = ((BallPosition *)a)->distanceTo;
+  int r = ((BallPosition *)b)->distanceTo;
+  return (l - r);
 }
 
 void sort(BallPosition arr[])
