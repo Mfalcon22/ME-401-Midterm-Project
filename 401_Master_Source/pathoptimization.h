@@ -11,6 +11,7 @@ void distanceTo(RobotPose us, BallPosition arr[]);
 void angleTo(RobotPose us, BallPosition arr[]);
 double dotProd(int x1, int y1, int x2, int y2);
 int comparator(const void *a, const void *b);
+void findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 
 
 
@@ -53,7 +54,13 @@ int comparator(const void *a, const void *b)
   return (l - r);
 }
 
+void findNextBall(RobotPose robotPoses[], BallPosition ballPos[])
+{
 
+  distanceTo(robotPoses[0], ballPos);  //determines the distance from us to all of the balls 
+  angleTo(robotPoses[0], ballPos);              //determines the angle from us to the ball clockwise
+  qsort((void*)ballPos,NUM_BALLS,sizeof(BallPosition),comparator);    //sorts the balls based on distance from us
+}
 
 
 
