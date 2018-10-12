@@ -63,10 +63,10 @@ void loop() {
   }
 
   BallPosition ballPos[20];
-
+  BallPosition targetBall;
   toTheFront(robotPoses);                //Sorts our bot to the front of the list
 
-  findNextBall(robotPoses, ballPos);
+  targetBall = findNextBall(robotPoses, ballPos);
 
   
   int numBalls = getBallPositions(ballPos);
