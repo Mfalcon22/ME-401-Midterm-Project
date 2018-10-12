@@ -8,9 +8,6 @@
 
 
 void toTheFront (RobotPose bots[]);
-int masterSort(BallPosition arr[], int counter);
-
-
 
 
 void toTheFront (RobotPose bots[])
@@ -28,18 +25,7 @@ void toTheFront (RobotPose bots[])
   }
 }
 
-int masterSort(BallPosition arr[], int counter)
-{
 
-  if (counter == NUM_BALLS)
-    return 0;
-  else {
-    counter++;
-    qsort((void*)arr, NUM_BALLS, sizeof(BallPosition), comparator);
-    masterSort(arr++, counter);
-  }
-
-}
 
 
 #endif
