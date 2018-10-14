@@ -1,8 +1,15 @@
 #include "ME401_Radio.h"
 #include "ME401_PID_IR.h"
 #include "pathoptimization.h"
+
 #include "RobotsOnTheField.h"
 
+
+
+
+//test
+
+#define MY_ROBOT_ID 6
 
 
 void setup() {
@@ -17,6 +24,7 @@ void setup() {
   // TODO: Change the kp, ki, kd in the ME491_PID_IR.h file to match your new tunings
   //       that you did after installing the sensor on your robot
   setupPIDandIR();
+
   
 }
 
@@ -24,6 +32,17 @@ void loop() {
 
   Serial.print("millis:");
   Serial.println(millis());
+
+
+  // TODO: This is where you implement all of your code for your robot. 
+  // REMEMBER: You must implement a state machine and have a good diagram of that state machine.
+  //           I HIGHLY recommend that you discuss this with the TAs and professor before starting to code.
+
+
+  // Here are a few examples of some of the core functionalities of the robot. If things ever stop working, I would
+  // recommend keeping a copy of this original template around so that you can load it to your robot and check whether
+  // you have a software issue or whether there is a hardware/wiring issue.
+
   
   // Simple example of sweeping the DC motor
   setpoint += 5;
@@ -51,8 +70,11 @@ void loop() {
   }
 
   BallPosition ballPos[20];
+
   
   toTheFront(robotPoses);                //Sorts our bot to the front of the list
+
+
 
   int numBalls = getBallPositions(ballPos);
   Serial.print("NUM BALLS: ");
