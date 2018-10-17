@@ -58,6 +58,7 @@ void loop() {
 
   BallPosition targetBall;               //Closest ball which we will go to
   targetBall = findNextBall(robotPoses, ballPos);
+  angleTo(robot,targetBall);  //finds angle to turn to be pointed at target ball
 
 
   delay(10);
