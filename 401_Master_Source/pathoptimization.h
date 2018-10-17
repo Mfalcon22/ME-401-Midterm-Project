@@ -7,6 +7,7 @@
 #include "ME401_Radio.h"
 
 
+
 void distanceTo(RobotPose us, BallPosition arr[]);
 void angleTo(RobotPose us, BallPosition target);
 double dotProd(int x1, int y1, int x2, int y2);
@@ -16,6 +17,14 @@ BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 
 
 void distanceTo(RobotPose us, BallPosition arr[])
+
+void DistanceTo(RobotPose us, BallPosition target);
+void AngleTo(RobotPose us, BallPosition target);
+double dotProd(int x1, int y1, int x2, int y2);
+
+
+void DistanceTo(RobotPose us, BallPosition arr[])
+
 {
   for(int i = 0; i < NUM_BALLS ; i++)
   {
@@ -38,6 +47,7 @@ void angleTo(RobotPose us, BallPosition target)
   double unitX = target.x/target.distanceTo;
   double unitY = target.y/target.distanceTo;
 
+
   angle = acos(dotProd(usX,usY,unitX,unitY)/(target.distanceTo * usMag));
 
   if(target.x > us.x)
@@ -45,7 +55,9 @@ void angleTo(RobotPose us, BallPosition target)
   else
   target.angleTo = -angle;
   //}
-}
+
+    
+  
 
 double dotProd(int x1, int y1, int x2, int y2)
 {
