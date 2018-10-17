@@ -44,10 +44,7 @@ void loop() {
   // you have a software issue or whether there is a hardware/wiring issue.
 
   
-  // Simple example of sweeping the DC motor
-  setpoint += 5;
-  if (setpoint > 60)
-    setpoint = -60;
+  
 
   // Simple example of looking for the corner beacon
   if (readIRFrequency() == CORNER)
@@ -83,6 +80,7 @@ void loop() {
 
   BallPosition targetBall;               //Closest ball which we will go to
   targetBall = findNextBall(robotPoses, ballPos);
+  angleTo(robot,targetBall);  //finds angle to turn to be pointed at target ball
 
 
   delay(10);
