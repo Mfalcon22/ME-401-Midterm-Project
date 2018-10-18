@@ -1,6 +1,7 @@
 #ifndef _STATEMACHINE_H
 #define _STATEMACHINE_H
 #include "pathoptimization.h"
+#include "MotorControl.h"
 
 
 enum StateMachine{
@@ -27,11 +28,15 @@ BallPosition targetBall;               //Closest ball which we will go to
 
 void STATE_SEARCH_FOR_BALL()
 {
-  
   targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
   angleTo(robotPoses[0],&targetBall);  //finds angle to turn to be pointed at target ball
 
   state = GO_TO_BALL;
+}
+
+void STATE_GO_TO_BALL(BallPosition target)
+{
+  
 }
 
 
