@@ -5,16 +5,15 @@
 #include "MotorControl.h"
 #include "StateMachine.h"
 
-enum States{
-  UNKNOWN = 0;
-  BALL_SEARCH = 1;
-  GO_TO_BALL = 2;
-  CORNER_SEARCH = 3;
-  GO_TO_CORNER = 4;
-  AVOID = 5;
-}
+
 
 #define MY_ROBOT_ID 6
+
+
+
+//int leftSwitch = pin here;
+//int rightSwitch = pin here;
+
 
 
 void setup() {
@@ -30,11 +29,9 @@ void setup() {
 }
 
 void loop() {
-
+  
   Serial.print("millis:");
   Serial.println(millis());
-
-
 
  
 //  // Simple example of looking for the corner beacon
@@ -48,8 +45,7 @@ void loop() {
 //    Serial.println(frequency);
 //  }
 
-  
-
+ 
   // Simple example of reading the robot and ball positions from the radio
   updateRobotPoseAndBallPositions();
   RobotPose robot = getRobotPose(MY_ROBOT_ID);
@@ -59,7 +55,7 @@ void loop() {
     printRobotPose(robot);
   }
 
-  BallPosition ballPos[20];
+  
 
   toTheFront(robotPoses);      //Sorts our bot to the front of the list
 
@@ -71,14 +67,42 @@ void loop() {
 
 
 
-  BallPosition targetBall;               //Closest ball which we will go to
-  targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
+  //BallPosition targetBall;               //Closest ball which we will go to
+  //targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
+  //angleTo(robot,&targetBall);  //finds angle to turn to be pointed at target ball
+  //testingAngle(targetBall);
+  //Serial.print("Angle: ");
+  //Serial.println(targetBall.angleTo);
 
-  angleTo(robot,&targetBall);  //finds angle to turn to be pointed at target ball
-  testingAngle(targetBall);
-  Serial.print("Angle: ");
-  Serial.println(targetBall.angleTo);
 
+  
+  switch(state)
+  {
+
+    case UNKNOWN:  
+
+      break;
+      
+    case BALL_SEARCH:
+      STATE_SEARCH_FOR_BALL();
+      break;
+
+    case GO_TO_BALL: 
+
+      break;
+
+    case CORNER_SEARCH:
+
+      break;
+
+    case GO_TO_CORNER:
+
+      break;
+
+    case AVOID:
+
+      break;
+  }
 
   determineTurn(targetBall);
   

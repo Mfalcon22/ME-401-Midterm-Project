@@ -8,23 +8,21 @@
 
 
 
-void distanceTo(RobotPose* us, BallPosition arr[]);
+void distanceTo(RobotPose us, BallPosition arr[]);
 void angleTo(RobotPose us, BallPosition* target);
 double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2);
-
 int comparator(const void *a, const void *b);
 BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 
 
+//void distanceTo(RobotPose us, BallPosition arr[]);
 
-void distanceTo(RobotPose us, BallPosition arr[])
-
-void DistanceTo(RobotPose us, BallPosition target);
+//void DistanceTo(RobotPose us, BallPosition target);
 void AngleTo(RobotPose us, BallPosition target);
 double dotProd(int x1, int y1, int x2, int y2);
 
 
-void DistanceTo(RobotPose us, BallPosition arr[])
+void distanceTo(RobotPose us, BallPosition arr[])
 
 {
   for(int i = 0; i < NUM_BALLS ; i++)
