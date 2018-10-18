@@ -7,7 +7,7 @@
 // Addresses for this node. CHANGE THESE FOR EACH NODE!
 
 #define NETWORKID     100   // Must be the same for all nodes (0 to 255)
-#define MYNODEID      2   // My node ID (0 to 255)
+#define MYNODEID      6   // My node ID (0 to 255)
 #define TONODEID      1   // Destination node ID (0 to 254, 255 = broadcast)
 #define MY_ROBOT_ID   6
 
@@ -53,7 +53,7 @@ struct BallPosition
 {
   int16_t x;
   int16_t y;  
-  double distanceTo;
+  int16_t distanceTo;
   double angleTo;
 };
 

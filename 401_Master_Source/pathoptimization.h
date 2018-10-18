@@ -8,9 +8,10 @@
 
 
 
-void distanceTo(RobotPose us, BallPosition arr[]);
-void angleTo(RobotPose us, BallPosition target);
-double dotProd(int x1, int y1, int x2, int y2);
+void distanceTo(RobotPose* us, BallPosition arr[]);
+void angleTo(RobotPose us, BallPosition* target);
+double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2);
+
 int comparator(const void *a, const void *b);
 BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 
@@ -28,38 +29,31 @@ void DistanceTo(RobotPose us, BallPosition arr[])
 {
   for(int i = 0; i < NUM_BALLS ; i++)
   {
-  double b = pow((arr[i].y - us.y), 2);
-  double c = pow((arr[i].x - us.x), 2);
+  double b = pow((fabs(arr[i].y) - fabs(us.y)), 2);
+  double c = pow((fabs(arr[i].x) - fabs(us.x)), 2);
   arr[i].distanceTo = (sqrt(b + c));
   }  
 }
 
-void angleTo(RobotPose us, BallPosition target)
+
+void angleTo(RobotPose us, BallPosition* target)
 {
 
-  int usX = tan((us.theta));
-  int usY = 1;
+  int16_t usX = tan(((us.theta)/1000));
+  int16_t usY = 1;
   double usMag = sqrt(usX^2+1);
-  double angle = 0;
   //for(int i = 0; i < NUM_BALLS ; i++)
   //{
     //unit vectors towards the ball
-  double unitX = target.x/target.distanceTo;
-  double unitY = target.y/target.distanceTo;
-
-
-  angle = acos(dotProd(usX,usY,unitX,unitY)/(target.distanceTo * usMag));
-
-  if(target.x > us.x)
-  target.angleTo = angle;
-  else
-  target.angleTo = -angle;
-  //}
+ // double unitX = target.x/target.distanceTo;
+  //double unitY = target.y/target.distanceTo;
 
     
-  
+  target->angleTo = acos((dotProd(usX,usY,target->x,target->y))/(target->distanceTo * usMag));
+  //}
+}
 
-double dotProd(int x1, int y1, int x2, int y2)
+double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2)
 {
   return (x1*x2)+(y1*y2);
 }

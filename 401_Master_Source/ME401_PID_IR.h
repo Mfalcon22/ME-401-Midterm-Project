@@ -68,8 +68,8 @@ void setupPIDandIR(void)
   digitalWrite(MotorPWMPin,0);
   digitalWrite(MotorDirectionPin,0);
 
-  SoftPWMServoPWMWrite(MotorPWMPin, 0);
-
+  
+  pinMode(MotorPWMPin, OUTPUT);
 
   //Setup the pid 
   myPID.SetMode(AUTOMATIC);
@@ -114,8 +114,8 @@ uint32_t MyCallback(uint32_t currentTime) {
     {
       digitalWrite(MotorDirectionPin,0);
     }  
-    SoftPWMServoPWMWrite(MotorPWMPin,abs(output));
-    counterPID = 0;
+  analogWrite(MotorPWMPin,abs(output));
+  counterPID = 0;
   }
   counterPID++;
   
