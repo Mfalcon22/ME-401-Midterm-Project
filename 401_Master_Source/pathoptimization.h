@@ -7,8 +7,8 @@
 #include "ME401_Radio.h"
 
 
-void distanceTo(RobotPose us, BallPosition arr[]);
-void angleTo(RobotPose us, BallPosition target);
+void distanceTo(RobotPose* us, BallPosition arr[]);
+void angleTo(RobotPose us, BallPosition* target);
 double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2);
 int comparator(const void *a, const void *b);
 BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
@@ -25,7 +25,7 @@ void distanceTo(RobotPose us, BallPosition arr[])
   }  
 }
 
-void angleTo(RobotPose us, BallPosition target)
+void angleTo(RobotPose us, BallPosition* target)
 {
 
   int16_t usX = tan(((us.theta)/1000));
@@ -38,7 +38,7 @@ void angleTo(RobotPose us, BallPosition target)
   //double unitY = target.y/target.distanceTo;
 
     
-  target.angleTo = acos((dotProd(usX,usY,target.x,target.y))/(target.distanceTo * usMag));
+  target->angleTo = acos((dotProd(usX,usY,target->x,target->y))/(target->distanceTo * usMag));
   //}
 }
 
