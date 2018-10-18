@@ -2,6 +2,10 @@
 #include "ME401_PID_IR.h"
 #include "pathoptimization.h"
 #include "RobotsOnTheField.h"
+#include "MotorControl.h"
+
+
+
 
 
 
@@ -9,6 +13,9 @@ void setup() {
 
   // Set up the serial port in case we want output or input
   Serial.begin(115200);
+
+  //setup motors
+  setupMotors(30,31);
 
   // Initialize the RFM69HCW radio
   ME401_Radio_initialize();
@@ -26,17 +33,19 @@ void loop() {
   Serial.println(millis());
   
   
+ 
+//  // Simple example of looking for the corner beacon
+//  if (readIRFrequency() == CORNER)
+//  {
+//    Serial.println("I see the corner");
+//  }
+//  else
+//  {
+//    Serial.print("Can't see the corner:");
+//    Serial.println(frequency);
+//  }
 
-  // Simple example of looking for the corner beacon
-  if (readIRFrequency() == CORNER)
-  {
-    Serial.println("I see the corner");
-  }
-  else
-  {
-    Serial.print("Can't see the corner:");
-    Serial.println(frequency);
-  }
+  
 
   // Simple example of reading the robot and ball positions from the radio
   updateRobotPoseAndBallPositions();
@@ -58,9 +67,18 @@ void loop() {
 
   BallPosition targetBall;               //Closest ball which we will go to
   targetBall = findNextBall(robotPoses, ballPos);
+  angleTo(robot,targetBall);  //finds angle to turn to be pointed at target ball
+  testingAngle(targetBall);
+  Serial.print("Angle: ");
+  Serial.println(targetBall.angleTo);
 
-
+  determineTurn(targetBall);
+  
   delay(10);
 }
+
+
+
+
 
 
