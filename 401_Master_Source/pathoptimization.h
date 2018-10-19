@@ -40,6 +40,9 @@ void angleTo(RobotPose us, BallPosition* target)
   int16_t usX = tan(((us.theta)/1000));
   int16_t usY = 1;
   double usMag = sqrt(usX^2+1);
+  int targetX = target->x - usX;
+  int targetY = target->y - usY;
+  
   //for(int i = 0; i < NUM_BALLS ; i++)
   //{
     //unit vectors towards the ball
@@ -47,7 +50,7 @@ void angleTo(RobotPose us, BallPosition* target)
   //double unitY = target.y/target.distanceTo;
 
     
-  target->angleTo = acos((dotProd(usX,usY,target->x,target->y))/(target->distanceTo * usMag));
+  target->angleTo = acos((dotProd(usX,usY,targetX,targetY))/(target->distanceTo * usMag));
   //}
 }
 
