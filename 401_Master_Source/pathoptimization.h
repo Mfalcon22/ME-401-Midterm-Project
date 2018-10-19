@@ -18,7 +18,7 @@ BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 //void distanceTo(RobotPose us, BallPosition arr[]);
 
 //void DistanceTo(RobotPose us, BallPosition target);
-void AngleTo(RobotPose us, BallPosition target);
+//void AngleTo(RobotPose us, BallPosition target);
 double dotProd(int x1, int y1, int x2, int y2);
 
 
@@ -40,8 +40,8 @@ void angleTo(RobotPose us, BallPosition* target)
   int16_t usX = tan(((us.theta)/1000));
   int16_t usY = 1;
   double usMag = sqrt(usX^2+1);
-  int targetX = target->x - usX;
-  int targetY = target->y - usY;
+  int16_t targetX = target->x - usX;
+  int16_t targetY = target->y - usY;
   
   //for(int i = 0; i < NUM_BALLS ; i++)
   //{

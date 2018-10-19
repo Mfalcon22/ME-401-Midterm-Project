@@ -67,42 +67,42 @@ void loop() {
 
 
 
-  //BallPosition targetBall;               //Closest ball which we will go to
-  //targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
-  //angleTo(robot,&targetBall);  //finds angle to turn to be pointed at target ball
-  //testingAngle(targetBall);
-  //Serial.print("Angle: ");
-  //Serial.println(targetBall.angleTo);
+  BallPosition targetBall;               //Closest ball which we will go to
+  targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
+  angleTo(robot,&targetBall);  //finds angle to turn to be pointed at target ball
+  testingAngle(targetBall);
+  Serial.print("Angle: ");
+  Serial.println(targetBall.angleTo);
 
 
   
-  switch(state)
-  {
-
-    case UNKNOWN:  
-
-      break;
-      
-    case BALL_SEARCH:
-      STATE_SEARCH_FOR_BALL();
-      break;
-
-    case GO_TO_BALL: 
-
-      break;
-
-    case CORNER_SEARCH:
-
-      break;
-
-    case GO_TO_CORNER:
-
-      break;
-
-    case AVOID:
-
-      break;
-  }
+//  switch(state)
+//  {
+//
+//    case UNKNOWN:  
+//
+//      break;
+//      
+//    case BALL_SEARCH:
+//      STATE_SEARCH_FOR_BALL();
+//      break;
+//
+//    case GO_TO_BALL: 
+//
+//      break;
+//
+//    case CORNER_SEARCH:
+//
+//      break;
+//
+//    case GO_TO_CORNER:
+//
+//      break;
+//
+//    case AVOID:
+//
+//      break;
+//  }
 
   determineTurn(targetBall);
   
