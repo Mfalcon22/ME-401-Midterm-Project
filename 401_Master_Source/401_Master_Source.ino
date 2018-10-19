@@ -70,9 +70,19 @@ void loop() {
   BallPosition targetBall;               //Closest ball which we will go to
   targetBall = findNextBall(robotPoses, ballPos); //Closest ball which we will go to
   angleTo(robot,&targetBall);  //finds angle to turn to be pointed at target ball
-  testingAngle(targetBall);
-  Serial.print("Angle: ");
-  Serial.println(targetBall.angleTo);
+
+//  int angle = 0;
+//  if(Serial.available() > 0)
+//  {
+//    
+//    angle = Serial.parseInt();
+//    targetBall.angleTo = angle;
+//  }
+//  
+ Serial.print("Angle: ");
+ Serial.println(targetBall.angleTo);
+//  determineTurn(targetBall);
+  
 
 
   
@@ -104,7 +114,6 @@ void loop() {
 //      break;
 //  }
 
-  determineTurn(targetBall);
   
   delay(10);
 }
