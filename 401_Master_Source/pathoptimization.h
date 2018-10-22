@@ -37,11 +37,11 @@ void distanceTo(RobotPose us, BallPosition arr[])
 void angleTo(RobotPose us, BallPosition* target)
 {
 
-  int16_t usX = tan(((us.theta)/1000));
-  int16_t usY = 1;
+  double usX = tan(((double)(us.theta)/1000));
+  double usY = 1;
   double usMag = sqrt(usX^2+1);
-  int16_t targetX = target->x - usX;
-  int16_t targetY = target->y - usY;
+  double targetX = target->x - usX;
+  double targetY = target->y - usY;
   
   //for(int i = 0; i < NUM_BALLS ; i++)
   //{
@@ -54,7 +54,7 @@ void angleTo(RobotPose us, BallPosition* target)
   //}
 }
 
-double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2)
+double dotProd(double x1, double y1, double x2, double y2)
 {
   return (x1*x2)+(y1*y2);
 }
