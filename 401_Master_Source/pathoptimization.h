@@ -13,12 +13,7 @@ void angleTo(RobotPose us, BallPosition* target);
 double dotProd(double x1, double y1, double x2, double y2);
 int comparator(const void *a, const void *b);
 BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
-
-
-//void distanceTo(RobotPose us, BallPosition arr[]);
-
-//void DistanceTo(RobotPose us, BallPosition target);
-//void AngleTo(RobotPose us, BallPosition target);
+void distanceToTarget(RobotPose us, BallPosition* target);
 double dotProd(int x1, int y1, int x2, int y2);
 
 
@@ -33,13 +28,21 @@ void distanceTo(RobotPose us, BallPosition arr[])
   }  
 }
 
+void distanceToTarget(RobotPose us, BallPosition* target)
+{
+  
+  double b = pow((fabs(target->y) - fabs(us.y)), 2);
+  double c = pow((fabs(target->x) - fabs(us.x)), 2);
+  target->distanceTo = (sqrt(b + c)); 
+}
+
 
 void angleTo(RobotPose us, BallPosition* target)
 {
-
-  double usX = tan(((double)(us.theta)/1000.0));
+  double ourAngle = (double)(us.theta)/1000.0;
+  double usX = tan(ourAngle+(PI));
   double usY = 1;
-  double usMag = sqrt((usX*usX)+1);
+//  double usMag = sqrt((pow(usX,2))+1);
   double targetX = target->x - usX;
   double targetY = target->y - usY;
   
@@ -50,7 +53,9 @@ void angleTo(RobotPose us, BallPosition* target)
   //double unitY = target.y/target.distanceTo;
 
     
-  target->angleTo = acos((dotProd(usX,usY,targetX,targetY))/(target->distanceTo * usMag));
+  //target->angleTo = acos((dotProd(usX,usY,targetX,targetY))/(target->distanceTo * usMag));
+ 
+  target->angleTo = (atan2((double)(target->x - us.x), (double)(target->y - us.y)) + (double)us.theta/1000)*(180/PI);
   //}
 }
 
@@ -81,11 +86,12 @@ BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[])
   //angleTo(robotPoses[0], ballPos);              //determines the angle from us to the ball clockwise
   qsort((void*)ballPos,NUM_BALLS,sizeof(BallPosition),comparator);    //sorts the balls based on distance from us
 
-  for(int i = 0; i<NUM_BALLS; i++)
-  {
-    if(ballPos[i].y > robotPoses[0].y)
-      return ballPos[i];
-  }
+//  for(int i = 0; i<NUM_BALLS; i++)
+//  {
+//    if(ballPos[i].y > robotPoses[0].y)
+//      return ballPos[i];
+//  }
+  return ballPos[0];
 }
 
 

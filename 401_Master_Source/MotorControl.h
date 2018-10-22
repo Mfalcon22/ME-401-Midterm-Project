@@ -6,7 +6,7 @@ Servo myservo2;
 
 #define LEFT 8
 #define RIGHT 8
-#define pause 30000
+#define pause 1000
 
 
 void stopmotors(int stoptime);
@@ -72,26 +72,28 @@ void determineTurn(BallPosition target)
 	  //while (target.angleTo != 0)
    //{
   
-   if (target.angleTo > 0) {
+   if (target.angleTo > 5) {
     Serial.println("turning right");
     stopmotors(pause);
     turn_right(target.angleTo);   
     stopmotors(pause);
    }
 
-   else if (target.angleTo < 0) {
+   else if (target.angleTo < -5) {
     Serial.println("turning left");
     stopmotors(pause);
     turn_left(target.angleTo);
     stopmotors(pause);
    }
    
-   else /*(target.angleTo = 0)*/ {
+   else if (target.angleTo <= 5 && target.angleTo >= -5) {
     Serial.println("Going to ball");
     GoToBall(target.distanceTo);
     //stopmotors(2000);
    }
   // }
+
+  
 }
 
 
