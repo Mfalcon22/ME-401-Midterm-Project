@@ -79,8 +79,12 @@ void loop() {
 //    targetBall.angleTo = angle;
 //  }
 //  
+
+double angleDegrees = targetBall.angleTo*(180/PI);
  Serial.print("Angle: ");
- Serial.println(targetBall.angleTo);
+ Serial.println(angleDegrees);
+ Serial.print("Our Angle: ");
+ Serial.println((double)robotPoses[0].theta/1000);
 //  determineTurn(targetBall);
   
 

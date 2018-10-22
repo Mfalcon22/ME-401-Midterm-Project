@@ -10,7 +10,7 @@
 
 void distanceTo(RobotPose us, BallPosition arr[]);
 void angleTo(RobotPose us, BallPosition* target);
-double dotProd(int16_t x1, int16_t y1, int16_t x2, int16_t y2);
+double dotProd(double x1, double y1, double x2, double y2);
 int comparator(const void *a, const void *b);
 BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[]);
 
@@ -37,9 +37,9 @@ void distanceTo(RobotPose us, BallPosition arr[])
 void angleTo(RobotPose us, BallPosition* target)
 {
 
-  double usX = tan(((double)(us.theta)/1000));
+  double usX = tan(((double)(us.theta)/1000.0));
   double usY = 1;
-  double usMag = sqrt(usX^2+1);
+  double usMag = sqrt((usX*usX)+1);
   double targetX = target->x - usX;
   double targetY = target->y - usY;
   
