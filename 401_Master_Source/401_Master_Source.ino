@@ -95,7 +95,7 @@ void loop() {
   //findCorner();
  
    
-  GO_TO_CENTER();
+  STATE_GO_TO_CENTER();
  
 
 
