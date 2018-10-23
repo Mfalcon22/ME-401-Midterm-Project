@@ -2,6 +2,7 @@
 #define _STATEMACHINE_H
 #include "pathoptimization.h"
 #include "MotorControl.h"
+#include "ME401_Radio.h"
 
 
 enum StateMachine{
@@ -19,6 +20,7 @@ void STATE_GO_TO_BALL(BallPosition target);
 void STATE_SEARCH_FOR_CORNER();
 void STATE_GO_TO_CORNER(int x, int y, int R);
 void STATE_AVOID();
+void GO_TO_CENTER();
 
 StateMachine state = BALL_SEARCH;
 BallPosition ballPos[20];
@@ -36,6 +38,17 @@ void STATE_SEARCH_FOR_BALL()
 void STATE_GO_TO_BALL()
 {
   determineTurn (targetBall);
+}
+
+
+void GO_TO_CENTER()
+{
+
+ distanceToTarget(robotPoses[0], &centerField);
+ angleTo(robotPoses[0], &centerField);
+
+ determineTurn(centerField);
+  
 }
 
 

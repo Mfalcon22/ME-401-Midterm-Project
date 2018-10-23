@@ -4,6 +4,7 @@
 #include "RobotsOnTheField.h"
 #include "MotorControl.h"
 #include "StateMachine.h"
+#include "FindCorner.h"
 
 
 
@@ -24,9 +25,14 @@ void setup() {
   // TODO: Change the kp, ki, kd in the ME491_PID_IR.h file to match your new tunings
   //       that you did after installing the sensor on your robot
   setupPIDandIR();
+  centerField.x = 1235;
+  centerField.y = 1235;
 
 
 }
+
+
+
 
 void loop() {
 
@@ -85,7 +91,9 @@ void loop() {
   Serial.println(targetBall.angleTo);
   //Serial.print("Our Angle: ");
   //Serial.println((double)robotPoses[0].theta/1000);
-  determineTurn(targetBall);
+  //determineTurn(targetBall);
+  //findCorner();
+  GO_TO_CENTER();
 
 
 

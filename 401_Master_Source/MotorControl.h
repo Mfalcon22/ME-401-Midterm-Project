@@ -88,8 +88,8 @@ void determineTurn(BallPosition target)
    
    else if (target.angleTo <= 5 && target.angleTo >= -5) {
     Serial.println("Going to ball");
-    GoToBall(target.distanceTo);
-    //stopmotors(2000);
+    GoToBall(.90*target.distanceTo);
+    //stopmotors(pause+2000);
    }
   // }
 

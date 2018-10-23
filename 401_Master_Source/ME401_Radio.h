@@ -57,7 +57,7 @@ struct BallPosition
   double angleTo;
 };
 
-
+BallPosition centerField;
 char lbuf[1024];
 void printRobotPose (RobotPose pose);
 void printBallPositions(int num, BallPosition (&pos)[NUM_BALLS]);

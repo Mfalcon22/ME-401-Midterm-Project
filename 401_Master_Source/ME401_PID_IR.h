@@ -157,6 +157,8 @@ uint32_t MyCallback(uint32_t currentTime) {
 // either too high or too low.
 int readIRFrequency ()
 {
+  Serial.print("Frequency: ");
+  Serial.println(frequency);
   if (frequency < 50)
   {
     return NO_CORNER_LOW;
