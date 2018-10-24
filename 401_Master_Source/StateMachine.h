@@ -130,7 +130,7 @@ void STATE_SEARCH_FOR_CORNER()
 
 void STATE_GO_TO_CORNER()
 {
-<<<<<<< HEAD
+
   //determine distance and angle to the corner
   //store that data in corner
   distanceToTarget(robotPoses[0], &corner);
@@ -142,7 +142,7 @@ void STATE_GO_TO_CORNER()
     determineTurn(corner);
   //}
   state = WAIT;
-=======
+
  //determine distance and angle to the corner
  //store that data in corner
  distanceToTarget(robotPoses[0], &corner);
@@ -154,7 +154,7 @@ void STATE_GO_TO_CORNER()
  determineTurn(corner);
  }
  state = STOP;
->>>>>>> parent of bfd6670... IR distance sensor working
+
 }
 
 void STATE_STOP()

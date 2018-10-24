@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 #include "ME401_Radio.h"
 #include "ME401_PID_IR.h"
 #include "pathoptimization.h"
@@ -122,5 +121,5 @@ void loop() {
 
 
 
->>>>>>> parent of bfd6670... IR distance sensor working
+
 

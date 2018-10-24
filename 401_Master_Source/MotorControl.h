@@ -1,13 +1,11 @@
 #ifndef _MOTORCONTROL_H
 #define _MOTORCONTROL_H
 #include <Servo.h>
-<<<<<<< HEAD
 #include "StateMachine.h"
-#include "collectingBalls.h"
+//#include "collectingBalls.h"
 
 
-=======
->>>>>>> parent of bfd6670... IR distance sensor working
+
 Servo myservo1;  // create servo object to control a servo
 Servo myservo2;
 
