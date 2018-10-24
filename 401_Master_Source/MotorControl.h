@@ -2,7 +2,7 @@
 #define _MOTORCONTROL_H
 #include <Servo.h>
 #include "StateMachine.h"
-//#include "collectingBalls.h"
+#include "collectingBalls.h"
 
 
 
@@ -73,9 +73,7 @@ void determineTurn(BallPosition target)
   //Serial.println(target.angleTo);
   Serial.print("Distance: ");
   Serial.println(target.distanceTo);
-  
-	  //while (target.angleTo != 0)
-   //{
+ 
   
    if (target.angleTo > 5) {
     Serial.println("turning right");
@@ -96,13 +94,10 @@ void determineTurn(BallPosition target)
     GoToBall(.90*target.distanceTo);
     //stopmotors(pause+2000);
    }
-  // }
+ 
 
   
 }
 
 
-  
- 
-  
   #endif
