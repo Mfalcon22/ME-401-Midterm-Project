@@ -23,7 +23,6 @@ void STATE_SEARCH_FOR_BALL();
 void STATE_GO_TO_BALL();
 void STATE_SEARCH_FOR_CORNER();
 void STATE_GO_TO_CORNER();
-<<<<<<< HEAD
 void STATE_GO_TO_CENTER();
 void STATE_AVOID();
 void STATE_STOP();
@@ -34,10 +33,10 @@ int leftSwitch = 10;
 int rightSwitch = 7;
 void limitSwitchSetUp();
 
-=======
+
 void STATE_AVOID();
 void STATE_GO_TO_CENTER();
->>>>>>> parent of eb08429... still working on states
+
 
 StateMachine state = BALL_SEARCH;
 BallPosition ballPos[20];
@@ -120,8 +119,7 @@ void STATE_GO_TO_CORNER()
 
 void STATE_STOP()
 {
-=======
->>>>>>> parent of eb08429... still working on states
+
   
 }
 
