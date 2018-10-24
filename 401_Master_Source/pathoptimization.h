@@ -8,6 +8,7 @@
 
 
 
+
 void distanceTo(RobotPose us, BallPosition arr[]);
 void angleTo(RobotPose us, BallPosition* target);
 double dotProd(double x1, double y1, double x2, double y2);
@@ -18,7 +19,6 @@ double dotProd(int x1, int y1, int x2, int y2);
 
 
 void distanceTo(RobotPose us, BallPosition arr[])
-
 {
   for(int i = 0; i < NUM_BALLS ; i++)
   {
@@ -35,7 +35,6 @@ void distanceToTarget(RobotPose us, BallPosition* target)
   double c = pow((fabs(target->x) - fabs(us.x)), 2);
   target->distanceTo = (sqrt(b + c)); 
 }
-
 
 void angleTo(RobotPose us, BallPosition* target)
 {
@@ -93,12 +92,6 @@ BallPosition findNextBall(RobotPose robotPoses[], BallPosition ballPos[])
 //  }
   return ballPos[0];
 }
-
-
-
-
-
-
 
 
 

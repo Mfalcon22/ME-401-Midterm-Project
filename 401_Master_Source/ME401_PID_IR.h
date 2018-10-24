@@ -83,8 +83,6 @@ void setupPIDandIR(void)
   attachCoreTimerService(MyCallback);
 }
 
-
-
 uint32_t MyCallback(uint32_t currentTime) {
   char newLeftA = digitalRead(EncoderAPin);
   char newLeftB = digitalRead(EncoderBPin);

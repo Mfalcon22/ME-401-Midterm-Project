@@ -56,6 +56,7 @@ struct BallPosition
 
 BallPosition centerField;
 BallPosition corner;
+
 char lbuf[1024];
 void printRobotPose (RobotPose pose);
 void printBallPositions(int num, BallPosition (&pos)[NUM_BALLS]);
