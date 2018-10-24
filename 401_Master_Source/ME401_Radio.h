@@ -37,8 +37,11 @@
 #define NUM_ROBOTS 20
 #define NUM_BALLS 20
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of a6fce41... shits fucked
 struct RobotPose
 {
   boolean valid;
