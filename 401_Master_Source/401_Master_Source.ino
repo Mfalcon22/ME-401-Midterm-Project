@@ -13,6 +13,10 @@
 
 
 
+//int leftSwitch = pin here;
+//int rightSwitch = pin here;
+
+
 
 void setup() {
   Serial.begin(115200);
@@ -35,6 +39,20 @@ void loop() {
 
   Serial.print("millis:");
   Serial.println(millis());
+
+
+  //  // Simple example of looking for the corner beacon
+  //  if (readIRFrequency() == CORNER)
+  //  {
+  //    Serial.println("I see the corner");
+  //  }
+  //  else
+  //  {
+  //    Serial.print("Can't see the corner:");
+  //    Serial.println(frequency);
+  //  }
+
+
   // Simple example of reading the robot and ball positions from the radio
   updateRobotPoseAndBallPositions();
   RobotPose robot = getRobotPose(MY_ROBOT_ID);
@@ -43,6 +61,8 @@ void loop() {
     Serial.println("The camera can see my robot");
     printRobotPose(robot);
   }
+
+
 
   toTheFront(robotPoses);      //Sorts our bot to the front of the list
 
@@ -66,52 +86,49 @@ void loop() {
 //      targetBall.angleTo = angle;
 //    }
   
+
+  
   Serial.print("Angle to ball: ");
   Serial.println(targetBall.angleTo);
   //Serial.print("Our Angle: ");
   //Serial.println((double)robotPoses[0].theta/1000);
   //determineTurn(targetBall);
   //findCorner();
+ 
    
   STATE_GO_TO_CENTER();
-  
- /*
-    switch(state)
-    {
-  
-      case UNKNOWN:
-  
-        break;
-  
-      case BALL_SEARCH:
-        STATE_SEARCH_FOR_BALL();
-        break;
-  
-      case GO_TO_BALL:
-        STATE_GO_TO_BALL();
-        break;
-      
-      case GO_TO_CENTER:
-         STATE_GO_TO_CENTER();
-         break;
-          
-      case SEARCH_FOR_CORNER:
-        STATE_SEARCH_FOR_CORNER();
-        break;
-  
-      case GO_TO_CORNER:
-        STATE_GO_TO_CORNER();
-        break;
-  
-      case AVOID:
-  
-        break;
-        
-      case STOP:
-      
-        break;
-    }
-    */
+ 
+
+
+
+
+  //  switch(state)
+  //  {
+  //
+  //    case UNKNOWN:
+  //
+  //      break;
+  //
+  //    case BALL_SEARCH:
+  //      STATE_SEARCH_FOR_BALL();
+  //      break;
+  //
+  //    case GO_TO_BALL:
+  //
+  //      break;
+  //
+  //    case CORNER_SEARCH:
+  //
+  //      break;
+  //
+  //    case GO_TO_CORNER:
+  //
+  //      break;
+  //
+  //    case AVOID:
+  //
+  //      break;
+  //  }
 
 
   delay(10);

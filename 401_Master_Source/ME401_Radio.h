@@ -37,7 +37,14 @@
 #define NUM_ROBOTS 20
 #define NUM_BALLS 20
 
+<<<<<<< HEAD
 typedef struct robotPose
+=======
+
+
+
+struct RobotPose
+>>>>>>> parent of eb08429... still working on states
 {
   boolean valid;
   int16_t ID;
@@ -55,7 +62,6 @@ typedef struct ballPosition
 }BallPosition;
 
 BallPosition centerField;
-BallPosition corner;
 char lbuf[1024];
 void printRobotPose (RobotPose pose);
 void printBallPositions(int num, BallPosition (&pos)[NUM_BALLS]);

@@ -4,11 +4,6 @@
 #include "MotorControl.h"
 #include "pathoptimization.h"
 #include "ME401_Radio.h"
-#include <math.h>
-
-const int playfieldX = 2470;
-const int playfieldY = 2470;
-
 
 int competition = 0;
 
@@ -21,7 +16,6 @@ enum StateMachine{
   SEARCH_FOR_CORNER = 4,
   GO_TO_CORNER = 5,
   AVOID = 6,
-  STOP = 7,
 };
 
 
@@ -29,6 +23,7 @@ void STATE_SEARCH_FOR_BALL();
 void STATE_GO_TO_BALL();
 void STATE_SEARCH_FOR_CORNER();
 void STATE_GO_TO_CORNER();
+<<<<<<< HEAD
 void STATE_GO_TO_CENTER();
 void STATE_AVOID();
 void STATE_STOP();
@@ -39,19 +34,14 @@ int leftSwitch = 10;
 int rightSwitch = 7;
 void limitSwitchSetUp();
 
+=======
+void STATE_AVOID();
+void STATE_GO_TO_CENTER();
+>>>>>>> parent of eb08429... still working on states
 
 StateMachine state = BALL_SEARCH;
 BallPosition ballPos[20];
 BallPosition targetBall;               //Closest ball which we will go to
-
-void limitSwitchSetUp()
-{
-  pinMode(leftSwitch, INPUT);
-  pinMode(rightSwitch, INPUT);
-
-  digitalWrite(leftSwitch, LOW);
-  digitalWrite(rightSwitch, LOW);
-}
 
 
 /* determines the distance from us to all of the balls to find the ball closest to us
@@ -97,37 +87,8 @@ void STATE_GO_TO_CENTER()
 
 void STATE_SEARCH_FOR_CORNER()
 {
-  //rotate and scan the corner
 
-  //once corner is identified this code will determine the distance and angle
-
-  if(robotPoses[0].theta > ((20*PI) / 12) && robotPoses[0].theta < ((22*PI)/12))
-    {//corner A
-      corner.x = 0;
-      corner.y = 0;
-      //angle is the differencial of our angle and the angle of the IR motor which will stay pointed at the corner
-    }
-   else if(robotPoses[0].theta > ((2*PI) / 12) && robotPoses[0].theta < ((4*PI)/12))
-    {//corner B
-      corner.x = 0;
-      corner.y = playfieldY;
-      //angle is the differencial of our angle and the angle of the IR motor which will stay pointed at the corner
-    }
-    else if(robotPoses[0].theta < ((10*PI) / 12) && robotPoses[0].theta > ((8*PI)/12))
-    {//corner C
-      corner.x = playfieldX;
-      corner.y = playfieldY;
-      //angle is the differencial of our angle and the angle of the IR motor which will stay pointed at the corner
-    }
-    else if(robotPoses[0].theta < ((16*PI) / 12) && robotPoses[0].theta > ((14*PI)/12))
-    {//corner D
-      corner.x = -playfieldX;
-      corner.y = 0;
-      //angle is the differencial of our angle and the angle of the IR motor which will stay pointed at the corner
-    }
-  
-}
-
+<<<<<<< HEAD
 void STATE_GO_TO_CORNER()
 {
 
@@ -159,10 +120,10 @@ void STATE_GO_TO_CORNER()
 
 void STATE_STOP()
 {
+=======
+>>>>>>> parent of eb08429... still working on states
   
 }
-
-
 
 
 
