@@ -1,10 +1,8 @@
 #ifndef _STATEMACHINE_H
 #define _STATEMACHINE_H
-<<<<<<< HEAD
 
-=======
 #include "pathoptimization.h"
->>>>>>> parent of a6fce41... shits fucked
+
 #include "MotorControl.h"
 #include "pathoptimization.h"
 #include "ME401_Radio.h"
@@ -127,39 +125,6 @@ void STATE_STOP()
 
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
