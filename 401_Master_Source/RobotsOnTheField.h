@@ -10,7 +10,6 @@
 void toTheFront (RobotPose bots[]);
 
 
-
 void toTheFront (RobotPose bots[])
 {
 
@@ -25,6 +24,8 @@ void toTheFront (RobotPose bots[])
     }
   }
 }
+
+
 
 
 #endif
