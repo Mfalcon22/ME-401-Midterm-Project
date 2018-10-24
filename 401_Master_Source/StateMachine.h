@@ -62,7 +62,7 @@ void STATE_SEARCH_FOR_BALL()
  * 2: for the 'competition' we can set when we want to go to the corner based on how many balls are still on the field*/
 void STATE_GO_TO_BALL()
 {
-  determineTurn (targetBall);
+ // determineTurn (targetBall);
   if(competition == 0)
     state = GO_TO_CENTER;
   else if(numBalls == 0)
@@ -80,16 +80,12 @@ void STATE_GO_TO_CENTER()
  angleTo(robotPoses[0], &centerField);
  
  //go to the center
- determineTurn(centerField);
+// determineTurn(centerField);
 
  state = SEARCH_FOR_CORNER;
   
 }
 
-void STATE_SEARCH_FOR_CORNER()
-{
-
-}
 void STATE_GO_TO_CORNER()
 {
 
@@ -101,16 +97,10 @@ void STATE_GO_TO_CORNER()
   //go to the corner
   while (digitalRead(leftSwitch) == LOW && digitalRead(rightSwitch) == LOW)
   {
-    determineTurn(corner);
+  //  determineTurn(corner);
   }
   state = WAIT;
 
-}
-
-void STATE_WAIT()
-{
-
-  
 }
 
 

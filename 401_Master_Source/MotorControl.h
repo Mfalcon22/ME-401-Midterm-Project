@@ -2,7 +2,7 @@
 #define _MOTORCONTROL_H
 #include <Servo.h>
 #include "StateMachine.h"
-#include "collectingBalls.h"
+//#include "collectingBalls.h"
 
 
 
@@ -23,18 +23,6 @@ void driveTest();
 void setupMotors(int motor1, int motor2);
 
 
-void driveTest()
-{
-    Serial.println("Turning Right");
-    turn_right(45);
-    stopmotors(pause);
-    Serial.println("Turning Left");
-    turn_left(45);
-    stopmotors(pause);
-    Serial.println("Driving to Ball");
-    GoToBall(20);
-    stopmotors(pause);
-}
 void setupMotors(int motor1, int motor2)
 {
 	myservo1.attach(motor1);  // attaches the servo pin# the servo object
@@ -95,7 +83,6 @@ void determineTurn(BallPosition target)
     //stopmotors(pause+2000);
    }
  
-
   
 }
 
