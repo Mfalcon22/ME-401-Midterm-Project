@@ -1,9 +1,8 @@
 #ifndef _STATEMACHINE_H
 #define _STATEMACHINE_H
 
-
-#include "pathoptimization.h"
 #include "MotorControl.h"
+#include "pathoptimization.h"
 #include "ME401_Radio.h"
 #include <math.h>
 

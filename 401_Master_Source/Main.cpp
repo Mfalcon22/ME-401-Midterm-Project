@@ -4,7 +4,7 @@
 #include "ME401_PID_IR.h"
 #include "pathoptimization.h"
 #include "RobotsOnTheField.h"
-//#include "MotorControl.h"
+#include "MotorControl.h"
 #include "StateMachine.h"
 #include "FindCorner.h"
 #include "collectingBalls.h"
@@ -62,7 +62,7 @@ void loop() {
   //findCorner();
    getDistance();  //IR distance sensor testing
   
- 
+ /*
     switch(state)
     {
   
@@ -98,7 +98,7 @@ void loop() {
       
         break;
     }
-    
+    */
 
 
   delay(10);

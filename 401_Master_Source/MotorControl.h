@@ -1,8 +1,9 @@
 #ifndef _MOTORCONTROL_H
 #define _MOTORCONTROL_H
 #include <Servo.h>
-#include "collectingBalls.h"
 #include "StateMachine.h"
+#include "collectingBalls.h"
+
 
 Servo myservo1;  // create servo object to control a servo
 Servo myservo2;
