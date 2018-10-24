@@ -86,7 +86,7 @@ void loop() {
 //      targetBall.angleTo = angle;
 //    }
   
-
+  determineTurn(targetBall);
   
   Serial.print("Angle to ball: ");
   Serial.println(targetBall.angleTo);
