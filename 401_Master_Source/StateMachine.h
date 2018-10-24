@@ -1,5 +1,7 @@
 #ifndef _STATEMACHINE_H
 #define _STATEMACHINE_H
+
+
 #include "pathoptimization.h"
 #include "MotorControl.h"
 #include "ME401_Radio.h"
@@ -26,14 +28,13 @@ enum StateMachine {
 
 void STATE_SEARCH_FOR_BALL();
 void STATE_GO_TO_BALL();
-
 void STATE_SEARCH_FOR_CORNER();
 void STATE_GO_TO_CORNER();
-
 void STATE_GO_TO_CENTER();
-
 void STATE_AVOID();
 void STATE_WAIT();
+
+
 
 int leftSwitch = 10;
 int rightSwitch = 7;
@@ -137,10 +138,10 @@ void STATE_GO_TO_CORNER()
   angleTo(robotPoses[0], &corner);
 
   //go to the corner
-  while (digitalRead(leftSwitch) == LOW && digitalRead(rightSwitch) == LOW)
-  {
+  //while (digitalRead(leftSwitch) == LOW && digitalRead(rightSwitch) == LOW)
+  //{
     determineTurn(corner);
-  }
+  //}
   state = WAIT;
 }
 

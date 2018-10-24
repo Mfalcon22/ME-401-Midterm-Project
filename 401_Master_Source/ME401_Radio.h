@@ -37,22 +37,22 @@
 #define NUM_ROBOTS 20
 #define NUM_BALLS 20
 
-struct RobotPose
+typedef struct robotPose
 {
   boolean valid;
   int16_t ID;
   int16_t x;
   int16_t y;
   int16_t theta;
-};
+}RobotPose;
 
-struct BallPosition
+typedef struct ballPosition
 {
   int16_t x;
   int16_t y;  
   int16_t distanceTo;
   double angleTo;
-};
+}BallPosition;
 
 BallPosition centerField;
 BallPosition corner;
