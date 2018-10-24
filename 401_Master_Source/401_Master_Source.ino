@@ -94,14 +94,13 @@ void loop() {
   //Serial.println((double)robotPoses[0].theta/1000);
   //determineTurn(targetBall);
   //findCorner();
-<<<<<<< HEAD
- 
+<<<<<<< HEAD 
    
   STATE_GO_TO_CENTER();
  
-=======
+
   GO_TO_CENTER();
->>>>>>> parent of 07fd363... compiles
+
 
 
 
